@@ -7,24 +7,32 @@ import Container from "./Container";
 import Navbar from "./components/navbar.component";
 import Home from "./pages/home.page";
 import UserAuthForm from "./pages/userAuthForm.page";
+import Authenticate from "./Authenticate";
+import Editor from "./pages/editor.pages";
 
 
 
 const App = () => {
     let dispatch = useDispatch();
 
+    async function fetchData() {
+        await appwriteAuthService.getCurrentUser()
+        .then((user)=>{
+            dispatch(login(user))
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+        
+    }
     useEffect(() => {
-        async function fetchData() {
-            await appwriteAuthService.getCurrentUser()
-            .then((user)=>{
-                dispatch(login(user))
-            })
-            .catch(err=>{
-                console.log(err);
-            })
-            
+        let cookieFallback = JSON.parse(localStorage.getItem('cookieFallback'));
+
+        if(cookieFallback && cookieFallback.length != 0){
+            fetchData();
         }
-        fetchData();
+        
+
     }, [])
 
 
@@ -35,11 +43,11 @@ const App = () => {
         <Routes>
             <Route path="/" element={<Container />} >
                 <Route index element={<Home />} />
-                <Route path="test" element={<h1>Test page</h1>}/>
 
-                {/* <Route path="/signin" element={<UserAuthForm type="sign-in" />} />
-                <Route path="/signup" element={<UserAuthForm type="sign-up" />} /> */}
+                <Route path="/dashboard" element={status?<h1>Dashboard</h1>:<h1>Not loged in</h1>} >
+                    <Route path="write" element={<Editor/>} />
 
+                </Route>
             </Route>
 
         </Routes>
