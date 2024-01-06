@@ -106,7 +106,7 @@ console.log("dbRes : ", dbRes);
                 }
             } 
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             // console.log("Appwrite service :: getCurrentUser :: error", error);
             throw error
         }

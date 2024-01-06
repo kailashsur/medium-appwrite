@@ -38,26 +38,31 @@ export default function Navbar() {
 
             <div className=' flex items-center gap-10'>
                 {/* //search */}
-                <button>
+                <div className=' cursor-pointer'>
                     <i className="fi fi-rr-search text-2xl text-dark-grey flex items-center"></i>
-                </button>
+                </div>
 
                 {
                     status ?
                         <>
+                        {/* Write component to write the blog */}
+                            <div className=' cursor-pointer '>
+                                <i className='fi fi-rr-file-edit text-dark-grey text-2xl flex items-center'></i>
+                            </div>
+
                             {/* //notification */}
-                            <button className=''>
+                            <div className=' cursor-pointer'>
                                 <i className="fi fi-rr-bell text-dark-grey text-2xl flex items-center"></i>
-                            </button>
+                            </div>
 
                             {/* //profile toggle */}
                             <div className='relative'
                                 onClick={handelUserNavPanel}
                                 onBlur={handelBlur}
                             >
-                                <button className='w-10 h-10 mt-1'>
+                                <div className='w-10 h-10 mt-1 cursor-pointer'>
                                     <img src={status?userData.profile_img:""} className='w-full h-full object-cover rounded-full border-black' />
-                                </button>
+                                </div>
 
                                 {
                                     userNavPanel ?

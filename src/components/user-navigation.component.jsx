@@ -12,18 +12,14 @@ export default function UserNavigationPanel() {
   let {status, userData:data} = useSelector(({User})=>User);
 
   const signOUtUser = async ()=>{
-    let loader = toast.loading("Loading...")
+    dispatch(logout())
 
     await appwriteAuthService.logout()
     .then(()=>{
-        dispatch(logout())
-        toast.dismiss(loader)
         toast.success("Sign Out ✔")
-      
     })
     .catch(err =>{
       toast.dismiss(loader)
-      toast.success(err)
       console.log(err);
 
     })
