@@ -6,7 +6,7 @@ import UserAuthForm from '../pages/userAuthForm.page';
 import { statusTrue } from '../store/slices/featureSlice';
 
 export default function Navbar() {
-    
+
     let { status, userData } = useSelector(({ User }) => User);
     const [userNavPanel, setUserNavPanel] = useState(false);
     let dispatch = useDispatch();
@@ -19,18 +19,18 @@ export default function Navbar() {
         setTimeout(()=>{
           setUserNavPanel(false)
         }, 200)
-        
+
     }
 
     const handelGetStarted = (e)=>{
         e.preventDefault();
         dispatch(statusTrue())
-        
+
     }
 
     return (
         <>
-        
+
         <nav className=' w-screen h-20 border-b border-dark-grey/20 flex items-center justify-between px-6 md:px-52'>
             <Link to={"/"}>
                 <i className="fi fi-brands-medium text-black text-4xl flex items-center"></i>
@@ -38,31 +38,26 @@ export default function Navbar() {
 
             <div className=' flex items-center gap-10'>
                 {/* //search */}
-                <div className=' cursor-pointer'>
+                <button>
                     <i className="fi fi-rr-search text-2xl text-dark-grey flex items-center"></i>
-                </div>
+                </button>
 
                 {
                     status ?
                         <>
-                        {/* Write component to write the blog */}
-                            <div className=' cursor-pointer '>
-                                <i className='fi fi-rr-file-edit text-dark-grey text-2xl flex items-center'></i>
-                            </div>
-
                             {/* //notification */}
-                            <div className=' cursor-pointer'>
+                            <button className=''>
                                 <i className="fi fi-rr-bell text-dark-grey text-2xl flex items-center"></i>
-                            </div>
+                            </button>
 
                             {/* //profile toggle */}
                             <div className='relative'
                                 onClick={handelUserNavPanel}
                                 onBlur={handelBlur}
                             >
-                                <div className='w-10 h-10 mt-1 cursor-pointer'>
+                                <button className='w-10 h-10 mt-1'>
                                     <img src={status?userData.profile_img:""} className='w-full h-full object-cover rounded-full border-black' />
-                                </div>
+                                </button>
 
                                 {
                                     userNavPanel ?
@@ -85,7 +80,7 @@ export default function Navbar() {
             </div>
         </nav>
 
-        
+
 
         </>
     )

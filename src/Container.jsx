@@ -14,7 +14,7 @@ export default function Container() {
   return (
     <AnimationWrapper>
         {
-            authShow ? !status ? <UserAuthForm typeName={"sign-in"} />:null : null
+            authShow ? !status ? <UserAuthForm typeName={"sign-up"} />:null : null
         }
       <Navbar />
       <Outlet />

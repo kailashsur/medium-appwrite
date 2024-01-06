@@ -23,7 +23,7 @@ export default function UserAuthForm({ typeName }) {
 
 
     // The current route is available in the location object as location.pathname
-    const {pathname} = useLocation();
+    let {pathname} = useLocation();
 
 
     const handelSubmit = async (e) => {
@@ -71,8 +71,8 @@ export default function UserAuthForm({ typeName }) {
                 })
                 .catch(err => {
                     toast.dismiss(loader)
-                    toast.error(err)
-                    console.log("handelSubmit appwriteAuthService:: Signup :: Error", err);
+                    toast.error("Enter valid information")
+                    // console.log("handelSubmit appwriteAuthService:: Signup :: Error", err);
                 })
         }
 
@@ -85,9 +85,10 @@ export default function UserAuthForm({ typeName }) {
                     navigate(pathname)
 
                 })
-                .then(err => {
+                .catch(err => {
                     toast.dismiss(loader)
-                    console.log("handelSubmit appwriteAuthService:: Login :: Error", err);
+                    toast.error("Enter corect email and password")
+                    // console.log("handelSubmit appwriteAuthService:: Login :: Error", err);
                 })
 
         }
