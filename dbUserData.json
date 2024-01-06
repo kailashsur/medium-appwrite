@@ -1,0 +1,17 @@
+{
+    "fullname": "Kailash Sur",
+    "email": "closyhosting@gmail.com",
+    "username": "closyhosting",
+    "bio": "",
+    "$id": "6597be694d9ca717abfc",
+    "$permissions": [
+        "read(\"user:6597b5c8d72cc11dcf36\")",
+        "update(\"user:6597b5c8d72cc11dcf36\")",
+        "delete(\"user:6597b5c8d72cc11dcf36\")"
+    ],
+    "$createdAt": "2024-01-05T08:31:37.318+00:00",
+    "$updatedAt": "2024-01-05T08:31:37.318+00:00",
+    "profile_img": "https://miro.medium.com/v2/resize:fill:40:40/1*dmbNkD5D-u45r44go_cf0g.png",
+    "$databaseId": "6596d87a3861ef8cee8c",
+    "$collectionId": "6596ec6b2656830e7266"
+}

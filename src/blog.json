@@ -1,0 +1,18 @@
+{
+    "slug": "unja34af",
+    "title": "test title",
+    "user_id": "userar32wef",
+    "$id": "6596eb085b0fc17cf0e1",
+    "$permissions": [
+        "read(\"user:6596b5a6e914a3587706\")",
+        "update(\"user:6596b5a6e914a3587706\")",
+        "delete(\"user:6596b5a6e914a3587706\")"
+    ],
+    "$createdAt": "2024-01-04T17:29:44.376+00:00",
+    "$updatedAt": "2024-01-04T17:29:44.376+00:00",
+    "des": null,
+    "content": [],
+    "banner": null,
+    "$databaseId": "6596d87a3861ef8cee8c",
+    "$collectionId": "6596d937ac09d3185b95"
+}

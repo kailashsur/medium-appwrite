@@ -1,0 +1,16 @@
+{
+    "$id": "6596b5a6e914a3587706",
+    "$createdAt": "2024-01-04T13:41:58.956+00:00",
+    "$updatedAt": "2024-01-04T13:41:58.956+00:00",
+    "name": "Kailash",
+    "registration": "2024-01-04T13:41:58.954+00:00",
+    "status": true,
+    "labels": [],
+    "passwordUpdate": "2024-01-04T13:41:58.954+00:00",
+    "email": "test@gmail.com",
+    "phone": "",
+    "emailVerification": false,
+    "phoneVerification": false,
+    "prefs": {},
+    "accessedAt": "2024-01-04T13:41:58.954+00:00"
+}
